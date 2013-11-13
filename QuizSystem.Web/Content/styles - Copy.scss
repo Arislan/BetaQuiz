@@ -1,0 +1,105 @@
+textarea{
+	max-width:50%;
+}
+
+.form-tab{
+	margin-bottom:10px;
+	position:relative;
+	padding:1px;
+}
+
+.form-tab .form-field{
+	.invalid:not(:focus){ 
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px inset, rgba(169,0,0, 0.5) 0px 0px 7px 0px;
+		border-color:rgb(140,0,0);
+	}
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	margin-top:10px;
+	width:60%;
+}
+
+.form-tab label{
+	float:left;
+	width:150px;
+	text-align:right;
+	margin-right:15px;
+	margin-top:15px;
+}
+
+
+.errors-container{
+	height:50px;
+	position:absolute;
+	top:0;
+	margin-left:20px;
+	padding-left:55px;
+	text-align:left;
+	background-color: red;
+	border-radius:5px;
+	background: rgb(189, 0, 0) url('/img/caution.png') 10px 50% no-repeat;
+	background-size:30px 30px;
+	opacity:0.95;
+}
+
+.errors-container .errors-wrapper{
+	line-height:48px;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	max-height:100%;
+}
+
+.error-element{
+	display:block;
+	color:white;
+	margin-right:10px;
+	font-size:12px;
+	line-height:24px;
+	white-space:nowrap;
+	float:left;
+	clear:left;
+}
+
+.errors-container .arrow-div{
+ border: 10px dashed rgb(189, 0, 0);
+border-left: 0px;
+border-left-style: none;
+border-right-style: solid;
+border-bottom-color: rgba(0, 0, 0, 0);
+border-top-color: rgba(0, 0, 0, 0);
+height: 0px;
+top:25%;
+position:absolute;
+left:-10px;
+}
+
+
+/*Questions*/
+
+
+.question-edit-box{ 
+		.form-field textarea {
+			width:250px;
+			height:50px;
+			max-width:250px;
+			max-height:50px;
+			color:red;
+		}
+		
+}
+
+
+
+
+
+
+
+.ib{
+ 
+    *display: inline;
+	zoom: 1;
+	display: inline-block;
+   
+}

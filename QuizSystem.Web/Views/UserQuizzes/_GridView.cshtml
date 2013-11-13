@@ -1,0 +1,55 @@
+﻿@model SimpleDataPager<QuizAuthorViewModel>
+<table class="grid-view">
+    <thead>
+        <tr>
+            <th class="size1">
+                @Html.SortLink(x => x.Category)
+            </th>
+            <th class="size4">
+                @Html.SortLink(x => x.Title)
+            </th>
+            <th class="size1">
+                @Html.SortLink(x => x.Questions)
+            </th>
+            <th class="size1">
+                @Html.SortLink(x => x.State)
+            </th>
+            <th class="size3">
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="5"> 
+                <div class="total-results">Total Results : @Model.TotalResults</div>
+                @Html.GetPageMenu()
+            </td>
+        </tr>
+    </tfoot>
+    <tbody>
+        @if (Model.Items.Count() > 0)
+        {
+            foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Category</td>
+                    <td class="left">@item.Title</td>
+                    <td>@item.Questions</td>
+                    <td>@item.State</td>
+                    <td>
+                        <a href="/UserQuizzes/Edit?quizId=@item.Id" 
+                           class="button @(item.State != QuizSystem.Model.QuizState.Active ? "" : "disabled")">Edit</a>
+                        <a href="/UserQuizzes/Preview?quizId=@item.Id" class="button">Preview</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5"><hr />No Results Found<hr /></td>
+            </tr>
+        }
+    </tbody>
+</table>

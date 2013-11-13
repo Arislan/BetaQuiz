@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/custom/common-scripts.js"></script>
+    <script src="~/Scripts/custom/js-validator.js"></script>
+    <script src="~/Scripts/custom/quiz-edit-lib.js"></script>
+    <script src="~/Scripts/custom/repository.js"></script>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="clearfix">
+            <ul class="site-menu menu-list">
+                <li><a href="~/Home/Index">Home</a></li>
+                <li><span>Solve Quizz</span>
+                    <ul>
+                        <li><a href="~/Quizzes/Index">Fresh Quizzes</a></li>
+                        <li><a href="~/Quizzes/Archive">Archive</a></li>
+                    </ul>
+                </li>
+                <li><a href="~/UserQuizzes/Index">Make Quizz</a></li>
+                <li><span>Administration</span>
+                    <ul>
+                        <li><a href="~/Administration/Categories">Categories</a></li>
+                        <li><a href="~/Administration/Quizzes">Quizzes</a></li>
+                    </ul>
+                </li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </nav>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
