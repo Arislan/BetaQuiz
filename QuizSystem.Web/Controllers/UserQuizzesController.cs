@@ -167,8 +167,6 @@ namespace QuizSystem.Web.Controllers
         [HandleAjaxError]
         public ActionResult GetQuzzesGird()
         {
-            Thread.Sleep(2000);
-
             string currentUser = this.User.Identity.GetUserId();
 
             IQueryable<QuizAuthorViewModel> quizzes =
@@ -242,7 +240,6 @@ namespace QuizSystem.Web.Controllers
         [NoCache]
         public ActionResult AllQuestions(int quizId)
         {
-            Thread.Sleep(2000);
             this.ValidateAjaxRequest(quizId);
 
             IEnumerable<QuizEditQuestionViewModel> questions =
